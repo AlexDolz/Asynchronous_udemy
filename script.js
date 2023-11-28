@@ -83,7 +83,7 @@ const getCountryAndNeighbour = function (country) {
 
 // getCountryAndNeighbour('portugal');
 // getCountryAndNeighbour('lithuania');
-getCountryAndNeighbour('usa');
+// getCountryAndNeighbour('usa');
 
 //   const request = new XMLHttpRequest();
 //   request.open('GET', `https://restcountries.com/v2/name/${country}`);
@@ -91,3 +91,18 @@ getCountryAndNeighbour('usa');
 
 const request = fetch('https://restcountries.com/v2/name/portugal');
 console.log(request);
+
+// const getCountryData = function (country) {
+//   fetch(`https://restcountries.com/v2/name/${country}`)
+//     .then(response => response.json())
+//     .then(data => console.log(data));
+//   renderCountry(data[0]);
+// };
+
+const getCountryData = function (country) {
+  fetch(`https://restcountries.com/v2/name/${country}`)
+    .then(response => response.json())
+    .then(data => renderCountry(data[0]));
+};
+
+getCountryData('portugal');
